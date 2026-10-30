@@ -297,6 +297,7 @@ def find_available_port(host: str, start_port: int, max_attempts: int = 20) -> i
     import socket
     for p in range(start_port, min(65536, start_port + max_attempts)):
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             try:
                 s.bind((host, p))
                 return p
