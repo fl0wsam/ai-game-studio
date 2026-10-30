@@ -1,0 +1,960 @@
+/* ============================================================================
+   AI GAME STUDIO - PROFESSIONAL GAME ENGINE IDE & CREATIVE WORKSTATION
+   Design Reference: Professional Game Engine Tools (Godot Editor, Unity, Unreal)
+   Integrated with: Bennett OS Metrics, Paperclip Model Slugs, Hermes Terminal
+   Zero external CDN dependencies. 100% self-contained air-gapped styling.
+   Typography:
+   - Panel Titles & Badges: 'Departure Mono', 'Geist Pixel', monospace
+   - Tool Menus, Hierarchy, Inspector & Controls: 'Inter', 'Geist Sans', system-ui, sans-serif
+   - Code Editor, Terminal, Model Slugs, Metrics: 'JetBrains Mono', 'SF Mono', monospace
+   ============================================================================ */
+
+:root {
+  /* Typography Hierarchy */
+  --font-pixel: 'Departure Mono', 'Geist Pixel', 'PxPlus IBM VGA8', 'Silkscreen', monospace;
+  --font-sans: 'Inter', 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Geist Mono', 'SF Mono', 'Menlo', 'Fira Code', monospace;
+  --font-display: var(--font-pixel);
+  --font-body: var(--font-sans);
+
+  /* Professional Game Engine IDE Palette (Neutral Charcoal / Dark Slate) */
+  --ide-bg-base: #141416;          /* Deepest background (menu, status bar) */
+  --ide-bg-surface: #1b1b1e;       /* Panels, tree views, sidebars */
+  --ide-bg-panel: #202024;         /* Active tab surfaces, inner containers */
+  --ide-bg-card: #25252a;          /* Item cards, list items */
+  --ide-bg-card-hover: #2d2d34;    /* Hover highlights */
+  --ide-bg-input: #111113;         /* Inputs, code viewports, terminal */
+  
+  /* Precision IDE Borders & Dividers */
+  --ide-border-dark: #27272c;      /* Subtle panel dividers */
+  --ide-border-mid: #35353c;       /* Standard borders */
+  --ide-border-light: #484852;     /* Focus rings, active borders */
+  --ide-border-active: #3b82f6;    /* Active selection / accent blue */
+
+  /* Model & Service Provider Identity Colors */
+  --color-claude: #f97316;         /* Anthropic Claude - Code & Systems */
+  --color-claude-subtle: rgba(249, 115, 22, 0.15);
+  
+  --color-gemini: #38bdf8;         /* Google Gemini - Multimodal Art & Audio */
+  --color-gemini-subtle: rgba(56, 189, 248, 0.15);
+  
+  --color-openai: #10b981;         /* OpenAI - Story, Lore & Game Design */
+  --color-openai-subtle: rgba(16, 185, 129, 0.15);
+  
+  --color-studio: #a855f7;         /* Studio Orchestrator */
+  --color-studio-subtle: rgba(168, 85, 247, 0.15);
+
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  /* Text Contrast Hierarchy */
+  --text-main: #f4f4f5;            /* Bright primary text */
+  --text-secondary: #a1a1aa;       /* Labels, descriptions */
+  --text-muted: #71717a;           /* Hints, inactive items */
+  --text-disabled: #52525b;        /* Disabled states */
+
+  /* UI Measurements */
+  --header-height: 40px;
+  --toolbar-height: 44px;
+  --footer-height: 32px;
+  --radius-sm: 3px;
+  --radius-md: 5px;
+}
+
+/* ============================================================================
+   GLOBAL RESET & IDE WORKSPACE CANVAS
+   ============================================================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--ide-bg-base);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.45;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* IDE Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ide-bg-input);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ide-border-mid);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ide-border-light);
+}
+
+/* ============================================================================
+   TOP IDE MENU BAR & WINDOW HEADER
+   ============================================================================ */
+.ide-menubar {
+  height: var(--header-height);
+  min-height: var(--header-height);
+  background-color: var(--ide-bg-base);
+  border-bottom: 1px solid var(--ide-border-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  gap: 16px;
+}
+
+.ide-menu-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Application Brand & Logo */
+.ide-logo {
+  font-family: var(--font-pixel);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.ide-logo svg {
+  color: #3b82f6;
+}
+
+/* Desktop Menu Bar Items */
+.ide-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.ide-nav-item {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-secondary);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.ide-nav-item:hover {
+  background-color: var(--ide-bg-surface);
+  color: var(--text-main);
+}
+
+.ide-nav-item.active {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/* Paperclip Model Slugs in Menu Bar */
+.ide-model-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 8px;
+  padding-left: 12px;
+  border-left: 1px solid var(--ide-border-dark);
+}
+
+.model-slug {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.02em;
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.model-slug.openai {
+  background: var(--color-openai-subtle);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #6ee7b7;
+}
+
+.model-slug.claude {
+  background: var(--color-claude-subtle);
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  color: #fdba74;
+}
+
+.model-slug.gemini {
+  background: var(--color-gemini-subtle);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #7dd3fc;
+}
+
+/* Top HUD status indicators (Required compatibility) */
+.top-hud {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-logo { display: none; } /* Replaced by .ide-logo */
+.brand-badge {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  padding: 2px 6px;
+  background: var(--ide-bg-surface);
+  border: 1px solid var(--ide-border-mid);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+}
+
+.hud-status-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hud-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--ide-bg-surface);
+  border: 1px solid var(--ide-border-dark);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+.hud-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--text-muted);
+}
+
+.hud-dot.online { background-color: var(--color-success); }
+.hud-dot.busy { background-color: var(--color-warning); }
+.hud-dot.error { background-color: var(--color-danger); }
+
+.hud-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ============================================================================
+   IDE PROJECT TOOLBAR & BUILD CONTROLS
+   ============================================================================ */
+.ide-toolbar {
+  height: var(--toolbar-height);
+  min-height: var(--toolbar-height);
+  background-color: var(--ide-bg-surface);
+  border-bottom: 1px solid var(--ide-border-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  gap: 12px;
+}
+
+.directing-bar {
+  display: contents; /* Seamless flow into ide-toolbar */
+}
+
+.directing-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.input-prompt {
+  flex: 1;
+  background: var(--ide-bg-input);
+  border: 1px solid var(--ide-border-mid);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.12s ease;
+}
+
+.input-prompt:focus {
+  border-color: var(--ide-border-active);
+}
+
+.input-prompt::placeholder {
+  color: var(--text-muted);
+}
+
+.select-engine,
+.select-genre {
+  background: var(--ide-bg-input);
+  border: 1px solid var(--ide-border-mid);
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--text-main);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.12s ease;
+}
+
+.select-engine:focus,
+.select-genre:focus {
+  border-color: var(--ide-border-active);
+}
+
+/* Action Buttons (Clean IDE Buttons) */
+.btn {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--ide-border-mid);
+  background-color: var(--ide-bg-panel);
+  color: var(--text-main);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.12s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background-color: var(--ide-bg-card-hover);
+  border-color: var(--ide-border-light);
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  border-color: #3b82f6;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-mini {
+  font-size: 10px;
+  padding: 3px 6px;
+}
+
+/* Preset Chips */
+.preset-chips {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background-color: var(--ide-bg-base);
+  border-bottom: 1px solid var(--ide-border-dark);
+  font-size: 11px;
+  color: var(--text-muted);
+  overflow-x: auto;
+}
+
+.preset-chips span:first-child {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-secondary);
+  background: var(--ide-bg-surface);
+  border: 1px solid var(--ide-border-dark);
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.chip:hover {
+  background: var(--ide-bg-card);
+  color: var(--text-main);
+  border-color: var(--ide-border-mid);
+}
+
+/* ============================================================================
+   IDE WORKSPACE MULTI-PANE DOCK LAYOUT (Unity / Godot Editor Style)
+   ============================================================================ */
+.ide-workspace {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 240px 1fr 300px;
+  grid-template-rows: 1fr 220px;
+  gap: 2px;
+  background-color: var(--ide-border-dark); /* acts as dock splitters */
+  overflow: hidden;
+}
+
+/* Standard IDE Panel Box */
+.panel {
+  background-color: var(--ide-bg-surface);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Panel Header Tab */
+.panel-header {
+  height: 30px;
+  min-height: 30px;
+  background-color: var(--ide-bg-base);
+  border-bottom: 1px solid var(--ide-border-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.title-badge {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.title-badge svg {
+  color: var(--text-muted);
+}
+
+.panel-body {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ide-bg-surface);
+}
+
+/* ============================================================================
+   LEFT SIDEBAR: PROJECT EXPLORER & AGENT HIERARCHY TREE
+   ============================================================================ */
+.ide-sidebar-left {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  background-color: var(--ide-bg-surface);
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--ide-border-dark);
+}
+
+.ide-tree-view {
+  flex: 1;
+  padding: 6px;
+  overflow-y: auto;
+  font-family: var(--font-sans);
+  font-size: 11px;
+}
+
+.tree-section-title {
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  padding: 8px 6px 4px;
+}
+
+.tree-node {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.tree-node:hover {
+  background-color: var(--ide-bg-card-hover);
+  color: var(--text-main);
+}
+
+.tree-node.active {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.tree-node svg {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+}
+
+/* ============================================================================
+   CENTER VIEWPORT: AGENT PIPELINE GRAPH (Unreal Blueprints / Node Graph style)
+   ============================================================================ */
+.ide-center-main {
+  grid-column: 2;
+  grid-row: 1;
+  background-color: var(--ide-bg-surface);
+  display: flex;
+  flex-direction: column;
+}
+
+#agentGraphContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #121215;
+  background-image: 
+    radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+#agentGraphCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.graph-legend {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(20, 20, 22, 0.9);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--ide-border-dark);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-secondary);
+}
+
+.legend-color {
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+/* ============================================================================
+   RIGHT PANEL: INSPECTOR & SCRIPT / GDD CODE VIEWER
+   ============================================================================ */
+.ide-sidebar-right {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  background-color: var(--ide-bg-surface);
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--ide-border-dark);
+}
+
+.terminal-toolbar {
+  height: 32px;
+  min-height: 32px;
+  background-color: var(--ide-bg-base);
+  border-bottom: 1px solid var(--ide-border-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+}
+
+.terminal-tabs {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 100%;
+}
+
+.term-tab {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  padding: 0 8px;
+  height: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.12s ease;
+}
+
+.term-tab:hover {
+  color: var(--text-main);
+}
+
+.term-tab.active {
+  color: var(--text-main);
+  border-bottom-color: var(--ide-border-active);
+  font-weight: 500;
+}
+
+.tab-content {
+  display: none;
+  flex: 1;
+  overflow: auto;
+  background-color: var(--ide-bg-input);
+}
+
+.tab-content.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.inspector-body {
+  padding: 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--text-main);
+  white-space: pre-wrap;
+}
+
+/* Terminal Log Viewport */
+.terminal-stream {
+  flex: 1;
+  background-color: #0d0d0f;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.6;
+  color: #e4e4e7;
+  padding: 8px 10px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.terminal-stream .log-line {
+  margin-bottom: 2px;
+  display: flex;
+  gap: 6px;
+}
+
+.terminal-stream .log-time {
+  color: var(--text-muted);
+  user-select: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.terminal-stream .log-tag {
+  font-weight: 600;
+}
+
+.terminal-stream .log-tag.info { color: #38bdf8; }
+.terminal-stream .log-tag.success { color: #22c55e; }
+.terminal-stream .log-tag.warn { color: #f59e0b; }
+.terminal-stream .log-tag.error { color: #ef4444; }
+
+/* Bennett OS Metrics Strip inside Inspector Footer */
+.metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: var(--ide-border-dark);
+  border-top: 1px solid var(--ide-border-dark);
+}
+
+.metric-card {
+  background-color: var(--ide-bg-surface);
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.metric-label {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.metric-val {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-main);
+}
+
+/* ============================================================================
+   BOTTOM DOCK: ASSET VAULT & AUDIO CONTROLS
+   ============================================================================ */
+.ide-bottom-dock {
+  grid-column: 2;
+  grid-row: 2;
+  background-color: var(--ide-bg-surface);
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--ide-border-dark);
+}
+
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gallery-filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  background-color: var(--ide-bg-base);
+  border-bottom: 1px solid var(--ide-border-dark);
+}
+
+.filter-pills {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.filter-pill {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.filter-pill:hover {
+  background: var(--ide-bg-card);
+  color: var(--text-main);
+}
+
+.filter-pill.active {
+  background: var(--ide-bg-card);
+  color: #fff;
+  border-color: var(--ide-border-mid);
+  font-weight: 500;
+}
+
+.gallery-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 6px;
+  padding: 8px;
+  overflow-y: auto;
+  align-content: start;
+}
+
+.asset-card {
+  background-color: var(--ide-bg-card);
+  border: 1px solid var(--ide-border-dark);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: border-color 0.12s ease;
+}
+
+.asset-card:hover {
+  border-color: var(--ide-border-active);
+}
+
+.asset-thumb {
+  width: 100%;
+  height: 65px;
+  background-color: #0e0e11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.asset-thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.asset-meta {
+  padding: 4px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.asset-name {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.asset-type {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* IDE Bottom Status & Audio Player Bar */
+.audio-dock {
+  height: var(--footer-height);
+  min-height: var(--footer-height);
+  background-color: var(--ide-bg-base);
+  border-top: 1px solid var(--ide-border-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  gap: 16px;
+}
+
+.audio-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 160px;
+}
+
+.audio-track-name {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-main);
+}
+
+.audio-track-sub {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  color: var(--text-muted);
+}
+
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  max-width: 480px;
+}
+
+.audio-scrubber {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.scrub-bar {
+  flex: 1;
+  accent-color: #3b82f6;
+  cursor: pointer;
+  height: 4px;
+}
+
+.time-display {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+}
+
+.audio-equalizer {
+  display: flex;
+  align-items: flex-end;
+  gap: 1px;
+  height: 10px;
+}
+
+.eq-bar {
+  width: 2px;
+  height: 3px;
+  background-color: var(--color-gemini);
+}
+
+/* Modal Lightbox */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal-content {
+  background-color: var(--ide-bg-surface);
+  border: 1px solid var(--ide-border-mid);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  max-width: 80vw;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: calc(80vh - 60px);
+  object-fit: contain;
+  image-rendering: pixelated;
+  background: #000;
+}
+
+/* Backward Compatibility for legacy classes */
+.main-layout { display: contents; }

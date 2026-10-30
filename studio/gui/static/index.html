@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Game Studio — Autonomous Multi-Agent Game Engine IDE</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <!-- Top IDE Desktop Menu Bar -->
+  <header class="ide-menubar">
+    <div class="ide-menu-left">
+      <div class="ide-logo">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+          <polyline points="2 17 12 22 22 17"></polyline>
+          <polyline points="2 12 12 17 22 12"></polyline>
+        </svg>
+        AI GAME STUDIO IDE
+      </div>
+
+      <!-- Desktop Tool Menus -->
+      <nav class="ide-nav-links">
+        <span class="ide-nav-item active">Project</span>
+        <span class="ide-nav-item">Scene</span>
+        <span class="ide-nav-item">Assets</span>
+        <span class="ide-nav-item">Agents</span>
+        <span class="ide-nav-item">Build</span>
+        <span class="ide-nav-item">Debug</span>
+      </nav>
+
+      <!-- Multi-AI Team Allocation Badges -->
+      <div class="ide-model-badges">
+        <span class="model-slug openai" title="Game Director / Lore / GDD / Quests">● OpenAI (GDD & Lore)</span>
+        <span class="model-slug claude" title="Lead Programmer / Engine Architecture">● Claude (Code & Logic)</span>
+        <span class="model-slug gemini" title="Multimodal Artist / 2D Sprites & Audio">● Gemini (Art & Audio)</span>
+      </div>
+    </div>
+
+    <!-- IDE Status Indicators & Build Triggers -->
+    <div class="top-hud">
+      <div class="hud-status-group">
+        <div class="hud-pill">
+          <span id="wsConnectionDot" class="hud-dot"></span>
+          <span id="wsConnectionText">CONNECTING</span>
+        </div>
+        <div class="hud-pill">
+          <span style="color: var(--text-muted);">STATE:</span>
+          <strong id="hudProjectStatus" style="color: var(--color-gemini); font-family: var(--font-mono);">IDLE</strong>
+        </div>
+        <div class="hud-pill">
+          <span style="color: var(--text-muted);">PHASE:</span>
+          <strong id="hudActivePhase" style="color: var(--color-claude); font-family: var(--font-mono);">STANDBY</strong>
+        </div>
+      </div>
+
+      <div class="hud-actions">
+        <a id="btnPlayGame" href="/game" target="_blank" class="btn btn-success" style="background: #10b981; color: #fff; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px;" title="Play Generated Web Game directly">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          Play Game
+        </a>
+        <button id="btnVerify" class="btn" style="display: inline-flex; align-items: center; gap: 6px;" title="Run Automated Verification Pipeline">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          Verify Project
+        </button>
+        <button id="btnExport" class="btn" style="display: inline-flex; align-items: center; gap: 6px;" title="Export Clean Project Hierarchy">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Export Game
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- IDE Sub-Toolbar (Prompt Directing & Target Engine Controls) -->
+  <section class="ide-toolbar">
+    <div class="directing-inputs">
+      <input type="text" id="inputPrompt" class="input-prompt" placeholder="Describe game concept (e.g. Cyberpunk ninja runner with grappling hook, Roguelike dungeon crawler with elemental magic, Space fleet asteroid shmup)..." value="">
+
+      <select id="selectEngine" class="select-engine" title="Target Engine Output">
+        <option value="web_html5" selected>HTML5 / Web (Playable in Browser)</option>
+        <option value="godot4">Godot 4.x Engine</option>
+        <option value="pygame">Pygame (Python)</option>
+        <option value="unity">Unity 2D Engine</option>
+      </select>
+
+      <!-- Auto Genre Detection Indicator (Agent automatically identifies genre from prompt) -->
+      <div id="badgeDetectedGenre" class="ai-genre-badge" style="display: flex; align-items: center; gap: 6px; padding: 4px 10px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 4px; font-size: 11px; font-weight: 600; color: #38bdf8; white-space: nowrap;" title="AI automatically classifies genre from your prompt">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+        <span>AI Genre: Auto-Detect</span>
+      </div>
+      <input type="hidden" id="selectGenre" value="auto">
+
+      <label style="display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--text-secondary); cursor: pointer;">
+        <input type="checkbox" id="checkMock" checked>
+        Offline Mock
+      </label>
+
+      <button id="btnLaunch" class="btn btn-primary">▶ Build Game (Launch Agents)</button>
+    </div>
+
+    <!-- Iterative Refinement & Modification Bar (Post-Build Prompting) -->
+    <div class="refine-inputs" id="refineSection" style="display: flex; gap: 8px; align-items: center; background: #0c1222; border: 1px solid #1e293b; border-radius: 6px; padding: 6px 12px; margin-top: 6px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+      <input type="text" id="inputRefine" class="input-refine" placeholder="Refine current game (e.g. increase player speed, add more lives, change color palette, boost jump height)..." style="flex: 1; background: #060913; border: 1px solid #243048; color: #f8fafc; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-family: inherit;">
+      <button id="btnRefine" class="btn btn-primary" style="background: #8b5cf6; border: 1px solid #a78bfa; color: #ffffff; padding: 6px 14px; font-weight: 600; font-size: 11px; border-radius: 4px; cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; gap: 5px;">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline></svg>
+        <span>Refine Game</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Quick Template Presets -->
+  <div class="preset-chips">
+    <span>STARTER TEMPLATES:</span>
+    <span class="chip" data-preset="Endless neon cyber runner with high-speed obstacles and synthwave audio" data-engine="web_html5" data-genre="platformer_2d">[Neon Runner 2D]</span>
+    <span class="chip" data-preset="Top-down dungeon crawler with sword combat, goblin enemies, and quest objectives" data-engine="web_html5" data-genre="top_down_rpg">[Dungeon RPG]</span>
+    <span class="chip" data-preset="2D retro space shooter with asteroids, plasma lasers, and boss battles" data-engine="web_html5" data-genre="space_shooter">[Space Defender]</span>
+    <span class="chip" data-preset="Match-3 cosmic crystal grid puzzle with combo chain mechanics" data-engine="web_html5" data-genre="grid_puzzle">[Crystal Grid]</span>
+  </div>
+
+  <!-- Main IDE Multi-Pane Dock Layout (Godot/Unity Workspace) -->
+  <main class="ide-workspace">
+
+    <!-- Column 1: Left Sidebar (Project Files & Agent Team Hierarchy) -->
+    <aside class="ide-sidebar-left">
+      <div class="panel-header">
+        <span class="title-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+          </svg>
+          Project Explorer
+        </span>
+      </div>
+      <div id="ideProjectTree" class="ide-tree-view">
+        <div class="tree-section-title">Directory Hierarchy</div>
+        <div id="treeProjectRoot" class="tree-node active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-6l-2-2H5a2 2 0 0 0-2 2z"></path></svg>
+          <span id="treeRootLabel">res:// (Root Project)</span>
+        </div>
+        <div id="dynamicFileNodes">
+          <div class="tree-node" style="padding-left: 18px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            <span>assets/sprites/</span>
+          </div>
+          <div class="tree-node" style="padding-left: 18px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            <span>audio/ (sfx & bgm)</span>
+          </div>
+          <div class="tree-node" style="padding-left: 18px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon></svg>
+            <span>scenes/main.tscn</span>
+          </div>
+          <div class="tree-node" style="padding-left: 18px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            <span>scripts/player.gd</span>
+          </div>
+          <div class="tree-node" style="padding-left: 18px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg>
+            <span>docs/GDD.md</span>
+          </div>
+        </div>
+
+        <div class="tree-section-title" style="margin-top: 14px;">Studio Agent Team</div>
+        <div class="tree-node">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-studio)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 8 8 12 12 16 16 12 12 8"></polygon></svg>
+          Studio Director (Orchestrator)
+        </div>
+        <div class="tree-node" style="padding-left: 18px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-openai)" stroke-width="2"><circle cx="12" cy="12" r="4"></circle></svg>
+          OpenAI (Story & GDD)
+        </div>
+        <div class="tree-node" style="padding-left: 18px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-claude)" stroke-width="2"><circle cx="12" cy="12" r="4"></circle></svg>
+          Claude (Engine Code)
+        </div>
+        <div class="tree-node" style="padding-left: 18px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-gemini)" stroke-width="2"><circle cx="12" cy="12" r="4"></circle></svg>
+          Gemini (Media & Audio)
+        </div>
+      </div>
+    </aside>
+
+    <!-- Column 2, Row 1: Center Viewport (Interactive Agent Graph) -->
+    <section class="panel ide-center-main">
+      <div class="panel-header">
+        <span class="title-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          Viewport // Agent Pipeline Graph
+        </span>
+        <span style="font-family: var(--font-mono); font-size: 10px; color: var(--color-gemini);">60 FPS LIVE</span>
+      </div>
+
+      <div class="panel-body" id="agentGraphContainer">
+        <canvas id="agentGraphCanvas"></canvas>
+        <div class="graph-legend">
+          <div class="legend-item"><span class="legend-color" style="background: var(--color-studio);"></span> Orchestrator</div>
+          <div class="legend-item"><span class="legend-color" style="background: var(--color-openai);"></span> OpenAI (GDD/Lore)</div>
+          <div class="legend-item"><span class="legend-color" style="background: var(--color-gemini);"></span> Gemini (Art/Audio)</div>
+          <div class="legend-item"><span class="legend-color" style="background: var(--color-claude);"></span> Claude (Engine Code)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Column 2, Row 2: Bottom Dock (Asset Vault & Media Browser) -->
+    <section class="panel ide-bottom-dock">
+      <div class="panel-header">
+        <span class="title-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          Asset Vault & Media Browser
+        </span>
+        <span style="font-family: var(--font-mono); font-size: 10px; color: var(--text-secondary);"><span id="countAllAssets">0</span> Assets Generated</span>
+      </div>
+
+      <div class="gallery-container">
+        <div class="gallery-filters">
+          <div class="filter-pills">
+            <button class="filter-pill active" data-filter="all">ALL</button>
+            <button class="filter-pill" data-filter="sprites">SPRITES</button>
+            <button class="filter-pill" data-filter="textures">TEXTURES</button>
+            <button class="filter-pill" data-filter="sfx">SFX</button>
+            <button class="filter-pill" data-filter="music">MUSIC</button>
+            <button class="filter-pill" data-filter="cutscenes">CUTSCENES</button>
+          </div>
+          <input type="text" id="gallerySearch" placeholder="Filter assets..." style="background: var(--ide-bg-input); color: var(--text-main); border: 1px solid var(--ide-border-mid); font-size: 10px; padding: 2px 6px; border-radius: 3px; outline: none; width: 130px; font-family: var(--font-mono);">
+        </div>
+
+        <div id="galleryGrid" class="gallery-grid">
+          <div style="color: var(--text-muted); padding: 18px; text-align: center; grid-column: 1/-1; font-family: var(--font-sans); font-size: 11px;">
+            Awaiting multimodal asset generation from Gemini...
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Column 3: Right Sidebar (Inspector, Code/GDD Tabs & Build Console) -->
+    <aside class="panel ide-sidebar-right">
+      <!-- Inspector Tabs -->
+      <div class="terminal-toolbar">
+        <div class="terminal-tabs">
+          <button class="term-tab active" data-tab="tabLogs">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+            Console
+          </button>
+          <button class="term-tab" data-tab="tabGdd">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg>
+            GDD Spec
+          </button>
+          <button class="term-tab" data-tab="tabScenes">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon></svg>
+            Scene AST
+          </button>
+          <button class="term-tab" data-tab="tabScripts">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline></svg>
+            Scripts (Claude)
+          </button>
+          <button class="term-tab" data-tab="tabDiagnostics">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            Diagnostics
+          </button>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <select id="logFilterSelect" style="background: var(--ide-bg-input); color: var(--text-secondary); border: 1px solid var(--ide-border-dark); font-size: 10px; padding: 2px 4px; border-radius: 3px; outline: none; font-family: var(--font-mono);">
+            <option value="ALL">ALL</option>
+            <option value="INFO">INFO</option>
+            <option value="WARN">WARN</option>
+            <option value="ERROR">ERROR</option>
+            <option value="DEBUG">DEBUG</option>
+          </select>
+          <label style="display: flex; align-items: center; gap: 3px; font-size: 10px; color: var(--text-muted); cursor: pointer;">
+            <input type="checkbox" id="checkAutoScroll" checked> Auto
+          </label>
+          <button id="btnClearLogs" class="btn btn-mini" title="Clear Console">CLR</button>
+          <button id="btnCopyLogs" class="btn btn-mini" title="Copy Logs">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab Content Area -->
+      <div class="panel-body" style="display: flex; flex-direction: column;">
+        <div id="tabLogs" class="tab-content active" style="flex: 1;">
+          <div id="terminalStream" class="terminal-stream"></div>
+        </div>
+        <div id="tabGdd" class="tab-content">
+          <div id="tabGddBody" class="inspector-body">
+            <p style="color: var(--text-muted);">No GDD generated yet. Enter game prompt and click 'Build Game'.</p>
+          </div>
+        </div>
+        <div id="tabScenes" class="tab-content">
+          <div id="tabScenesBody" class="inspector-body">
+            <p style="color: var(--text-muted);">Engine scene AST will populate here upon synthesis.</p>
+          </div>
+        </div>
+        <div id="tabScripts" class="tab-content">
+          <div id="tabScriptsBody" class="inspector-body">
+            <p style="color: var(--text-muted);">Compiled engine scripts will appear here.</p>
+          </div>
+        </div>
+        <div id="tabDiagnostics" class="tab-content">
+          <div id="tabDiagBody" class="inspector-body">
+            <p style="color: var(--text-muted);">No verification diagnostics recorded yet.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bennett OS KPI Stat Counters Strip -->
+      <footer class="metrics-strip">
+        <div class="metric-card">
+          <span class="metric-label">TOTAL SPEND</span>
+          <span id="metricCostUsd" class="metric-val">$0.0000</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">TOKENS BILLED</span>
+          <span id="metricTotalTokens" class="metric-val">0</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">ITERATION</span>
+          <span id="metricIteration" class="metric-val">0 / 3</span>
+        </div>
+      </footer>
+    </aside>
+
+  </main>
+
+  <!-- IDE Footer & Audio Dock -->
+  <footer class="audio-dock">
+    <div class="audio-info">
+      <div id="audioTrackTitle" class="audio-track-name">No Audio Selected</div>
+      <div id="audioTrackSub" class="audio-track-sub">Preview WAV audio and SFX assets</div>
+    </div>
+
+    <div class="audio-controls">
+      <button id="btnAudioPlay" class="btn btn-mini">▶ Play</button>
+      <div class="audio-scrubber">
+        <input type="range" id="audioScrubBar" class="scrub-bar" value="0" min="0" max="100">
+        <span id="audioTimeDisplay" class="time-display">00:00 / 00:00</span>
+      </div>
+      <div class="audio-equalizer">
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Lightbox -->
+  <div id="imageModal" class="modal-overlay">
+    <div class="modal-content">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h4 id="modalTitle" style="color: var(--text-main); font-size: 12px; font-family: var(--font-pixel);">Asset Preview</h4>
+        <button id="btnModalClose" class="btn btn-mini">✕ Close</button>
+      </div>
+      <img id="modalImage" class="modal-image" src="" alt="Asset Preview">
+    </div>
+  </div>
+
+  <!-- Scripts: Local Only, Zero External CDN -->
+  <script src="/static/agent_graph.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

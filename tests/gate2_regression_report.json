@@ -1,0 +1,3170 @@
+{
+  "timestamp": "2026-10-29T18:02:45Z",
+  "python_version": "3.13.5",
+  "platform": "linux",
+  "summary": {
+    "total": 389,
+    "passed": 389,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "duration_seconds": 13.9738,
+    "success": true
+  },
+  "tier_breakdown": {
+    "tier1_features": {
+      "total": 151,
+      "passed": 151,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "duration": 1.4369
+    },
+    "tier2_boundaries": {
+      "total": 106,
+      "passed": 106,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "duration": 0.3848
+    },
+    "tier3_combinations": {
+      "total": 28,
+      "passed": 28,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "duration": 1.2454
+    },
+    "tier4_applications": {
+      "total": 12,
+      "passed": 12,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "duration": 1.3499
+    },
+    "tier5_adversarial": {
+      "total": 92,
+      "passed": 92,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "duration": 9.5279
+    }
+  },
+  "tests": [
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng01EngineHub.test_eng_01_01_default_hub_initialization",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000555,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng01EngineHub.test_eng_01_02_target_resolution_and_aliases",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.00034,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng01EngineHub.test_eng_01_03_custom_adapter_registration_and_lifecycle",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000275,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng01EngineHub.test_eng_01_04_adapter_lookup_error_handling",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000234,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng01EngineHub.test_eng_01_05_single_export_dispatch",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.011309,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng01EngineHub.test_eng_01_06_multi_export_dispatch",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.007893,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng02GodotAST.test_eng_02_01_variant_formatting",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000312,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng02GodotAST.test_eng_02_02_scene_ast_hierarchy_and_roots",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000275,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng02GodotAST.test_eng_02_03_resource_registration_and_deduplication",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000275,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng02GodotAST.test_eng_02_04_topological_sort_and_tscn_serialization",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000271,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng02GodotAST.test_eng_02_05_roundtrip_tscn_parsing",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.003394,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng02GodotAST.test_eng_02_06_project_godot_generation",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000262,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng03Hierarchy.test_eng_03_01_canonical_directory_provisioning",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000572,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng03Hierarchy.test_eng_03_02_package_assets_with_routing_and_checksums",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.007105,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng03Hierarchy.test_eng_03_03_package_scripts_with_mime_types",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000474,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng03Hierarchy.test_eng_03_04_markdown_documentation_generation",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000584,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng03Hierarchy.test_eng_03_05_hierarchy_verification_pass_and_fail",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.001394,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng03Hierarchy.test_eng_03_06_path_traversal_sanitization",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000339,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng04AssetLinker.test_eng_04_01_multi_stage_asset_resolution",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.006524,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng04AssetLinker.test_eng_04_02_texture_node_binding",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.006412,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng04AssetLinker.test_eng_04_03_audio_stream_binding_and_bus_assignment",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.00651,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng04AssetLinker.test_eng_04_04_resource_deduplication",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.006241,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng04AssetLinker.test_eng_04_05_actor_sprite_synthesis",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.006146,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng04AssetLinker.test_eng_04_06_physics_body_collision_shape_synthesis",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.006309,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng04AssetLinker.test_eng_04_07_procedural_scene_building_from_plan",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.006355,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng05Archetypes.test_eng_05_01_archetype_registry_lookup_and_aliases",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.00037,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng05Archetypes.test_eng_05_02_platformer_template_scenes_and_scripts",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000473,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng05Archetypes.test_eng_05_03_top_down_rpg_template_scenes_and_scripts",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000387,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng05Archetypes.test_eng_05_04_space_shooter_template_scenes_and_scripts",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000376,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng05Archetypes.test_eng_05_05_grid_puzzle_template_scenes_and_scripts",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000316,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng05Archetypes.test_eng_05_06_multi_engine_script_generation",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000261,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng06Adapters.test_eng_06_01_base_engine_adapter_protocol",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000403,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng06Adapters.test_eng_06_02_godot_adapter_export",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.0068,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng06Adapters.test_eng_06_03_pygame_adapter_export_and_headless_run",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.0663,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng06Adapters.test_eng_06_04_web_adapter_export_and_canvas_engine",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.006959,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng06Adapters.test_eng_06_05_unity_adapter_export_and_csharp_generation",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.00665,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_engine_pipeline.TestFeatureEng06Adapters.test_eng_06_06_launcher_commands_and_prerequisites",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000252,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestAgentGraphFeatures.test_graph_01_topology_initialization",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.017904,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestAgentGraphFeatures.test_graph_02_state_transitions",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.008825,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestAgentGraphFeatures.test_graph_03_message_edge_routing",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.007844,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestAgentGraphFeatures.test_graph_04_active_task_metadata",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.007321,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestAgentGraphFeatures.test_graph_05_typography_departure_mono",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.011672,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestAgentGraphFeatures.test_graph_06_dynamic_agent_status_endpoint",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.011526,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestCliLauncherFeatures.test_cli_01_default_argument_parsing",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000693,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestCliLauncherFeatures.test_cli_02_custom_flag_customizations",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000549,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestCliLauncherFeatures.test_cli_03_desktop_mode_switches",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000659,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestCliLauncherFeatures.test_cli_04_headless_mock_build_execution",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.185082,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestCliLauncherFeatures.test_cli_05_main_entrypoint_exit_codes",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.003212,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestCliLauncherFeatures.test_cli_06_desktop_script_contract",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000895,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestMediaGalleryFeatures.test_gallery_01_image_preview_endpoint",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.011464,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestMediaGalleryFeatures.test_gallery_02_audio_player_endpoint",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.008984,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestMediaGalleryFeatures.test_gallery_03_asset_metadata_query",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.011697,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestMediaGalleryFeatures.test_gallery_04_multi_asset_manifest_structure",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.011565,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestMediaGalleryFeatures.test_gallery_05_dynamic_asset_stream_injection",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.010414,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestMediaGalleryFeatures.test_gallery_06_card_metadata_attributes",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.00173,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestPromptDirectingPanelFeatures.test_direct_01_trigger_generation",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.073801,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestPromptDirectingPanelFeatures.test_direct_02_engine_target_selection",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.06568,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestPromptDirectingPanelFeatures.test_direct_03_genre_archetype_parameter",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.073338,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestPromptDirectingPanelFeatures.test_direct_04_mock_and_review_controls",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.066222,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestPromptDirectingPanelFeatures.test_direct_05_trigger_verification_endpoint",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.012419,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestPromptDirectingPanelFeatures.test_direct_06_trigger_export_endpoint",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.009377,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestVisualAestheticsAndDesktopCompliance.test_aesthetics_01_style_css_departure_mono_declaration",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.007535,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestVisualAestheticsAndDesktopCompliance.test_aesthetics_02_zero_external_cdn_references",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.011534,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestVisualAestheticsAndDesktopCompliance.test_aesthetics_03_cross_platform_path_normalization",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000342,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestVisualAestheticsAndDesktopCompliance.test_aesthetics_04_desktop_launcher_modes",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000388,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestVisualAestheticsAndDesktopCompliance.test_aesthetics_05_display_environment_detection",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000245,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestWorkspaceLogViewerFeatures.test_log_01_streaming_append",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.007729,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestWorkspaceLogViewerFeatures.test_log_02_log_limit_parameter",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.007085,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestWorkspaceLogViewerFeatures.test_log_03_severity_filtering",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.006879,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestWorkspaceLogViewerFeatures.test_log_04_gdd_inspector_payload",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.006772,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestWorkspaceLogViewerFeatures.test_log_05_scene_and_script_inspector",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.00724,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_gui_studio.TestWorkspaceLogViewerFeatures.test_log_06_token_metrics_inspection",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.006374,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch01Blackboard.test_orch_01_01_initial_state_and_defaults",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000407,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch01Blackboard.test_orch_01_02_store_and_retrieve_gdd_fidelity",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.004869,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch01Blackboard.test_orch_01_03_store_and_retrieve_asset_manifest",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.009967,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch01Blackboard.test_orch_01_04_atomic_scenes_scripts_and_verification_report",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000951,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch01Blackboard.test_orch_01_05_monotonic_revision_history_and_rollback",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.001479,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch01Blackboard.test_orch_01_06_serialization_and_disk_roundtrip",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.008443,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch01Blackboard.test_orch_01_07_observer_listeners_and_token_metrics",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000598,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch02EventBus.test_orch_02_01_direct_subscribe_and_publish",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000376,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch02EventBus.test_orch_02_02_multiple_subscribers_fan_out",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000336,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch02EventBus.test_orch_02_03_hierarchical_wildcard_topic_matching",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000523,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch02EventBus.test_orch_02_04_unsubscribe_and_clear_subscribers",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000378,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch02EventBus.test_orch_02_05_subscriber_exception_shielding",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000372,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch02EventBus.test_orch_02_06_sync_and_async_handlers",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.001552,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch02EventBus.test_orch_02_07_telemetry_ring_buffer_and_history_queries",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000937,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch03OpenAINarrativeAgent.test_orch_03_01_generate_gdd_schema_compliance",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000462,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch03OpenAINarrativeAgent.test_orch_03_02_narrative_lore_generation",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000376,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch03OpenAINarrativeAgent.test_orch_03_03_dialogue_trees_generation",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000306,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch03OpenAINarrativeAgent.test_orch_03_04_quest_mechanics_generation",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000294,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch03OpenAINarrativeAgent.test_orch_03_05_strict_role_isolation_disallows_assets",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000324,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch03OpenAINarrativeAgent.test_orch_03_06_strict_role_isolation_disallows_code",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.006645,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch03OpenAINarrativeAgent.test_orch_03_07_health_check_status",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.00033,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch04GeminiMultimodalAgent.test_orch_04_01_generate_assets_sprite_manifest",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.162387,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch04GeminiMultimodalAgent.test_orch_04_02_generate_sound_effects",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.0022,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch04GeminiMultimodalAgent.test_orch_04_03_generate_background_music",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.012633,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch04GeminiMultimodalAgent.test_orch_04_04_generate_cutscene_storyboard",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.00202,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch04GeminiMultimodalAgent.test_orch_04_05_strict_role_isolation_disallows_gdd",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000336,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch04GeminiMultimodalAgent.test_orch_04_06_strict_role_isolation_disallows_code",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.006322,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch04GeminiMultimodalAgent.test_orch_04_07_health_check_status",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000326,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch05ClaudeCodeAgent.test_orch_05_01_generate_code_gdscript_mechanics",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.006514,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch05ClaudeCodeAgent.test_orch_05_02_generate_scene_ast_hierarchy",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.006317,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch05ClaudeCodeAgent.test_orch_05_03_debug_code_targeted_repair",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000327,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch05ClaudeCodeAgent.test_orch_05_04_repair_code_batch",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000318,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch05ClaudeCodeAgent.test_orch_05_05_strict_role_isolation_disallows_gdd",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000291,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch05ClaudeCodeAgent.test_orch_05_06_strict_role_isolation_disallows_assets",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000322,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch05ClaudeCodeAgent.test_orch_05_07_health_check_status",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000283,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch06ProviderResilienceSecurity.test_orch_06_01_secret_masker_regex_patterns",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000275,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch06ProviderResilienceSecurity.test_orch_06_02_secret_masking_log_filter",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000324,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch06ProviderResilienceSecurity.test_orch_06_03_credential_manager_hierarchy",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000342,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch06ProviderResilienceSecurity.test_orch_06_04_token_bucket_rate_limiter_depletion_and_refill",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000302,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch06ProviderResilienceSecurity.test_orch_06_05_exponential_backoff_retry_transient_errors",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.200895,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch06ProviderResilienceSecurity.test_orch_06_06_exponential_backoff_non_retryable_error",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000415,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch06ProviderResilienceSecurity.test_orch_06_07_circuit_breaker_state_transitions",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.060514,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch07DeterministicMockProvider.test_orch_07_01_seed_reproducibility",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000475,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch07DeterministicMockProvider.test_orch_07_02_procedural_pixel_art_png_generation",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000873,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch07DeterministicMockProvider.test_orch_07_03_procedural_chiptune_audio_wav_generation",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.002186,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch07DeterministicMockProvider.test_orch_07_04_procedural_scene_ast_and_gdscript_generation",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.006783,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch07DeterministicMockProvider.test_orch_07_05_archetype_detection_all_genres",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000253,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_orch_core.TestFeatureOrch07DeterministicMockProvider.test_orch_07_06_zero_cost_metrics_and_health",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.0004,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestAssetIntegrityVerifierFeature.test_feature_asset_discovery_from_tscn",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000745,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestAssetIntegrityVerifierFeature.test_feature_asset_manifest_cross_check",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.001389,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestAssetIntegrityVerifierFeature.test_feature_broken_link_attribution",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000741,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestAssetIntegrityVerifierFeature.test_feature_png_header_verification",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000441,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestAssetIntegrityVerifierFeature.test_feature_wav_header_verification",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.001241,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestAssetIntegrityVerifierFeature.test_feature_zero_byte_rejection",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000369,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestDualModeSimulatorFeature.test_feature_frame_count_configurability",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000886,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestDualModeSimulatorFeature.test_feature_main_scene_autodiscovery",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000392,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestDualModeSimulatorFeature.test_feature_mock_simulator_stepper",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.0005,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestDualModeSimulatorFeature.test_feature_simulated_node_hierarchy",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000352,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestDualModeSimulatorFeature.test_feature_simulation_timeout_protection",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.00048,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestDualModeSimulatorFeature.test_feature_simulator_mode_selection",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000613,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestSyntaxValidatorFeature.test_feature_csharp_unity_component",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000402,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestSyntaxValidatorFeature.test_feature_gdscript_player_class",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000485,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestSyntaxValidatorFeature.test_feature_html_canvas_markup",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.026028,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestSyntaxValidatorFeature.test_feature_javascript_canvas_code",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000557,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestSyntaxValidatorFeature.test_feature_multi_language_directory_scan",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.02077,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestSyntaxValidatorFeature.test_feature_python_engine_code",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000661,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestSyntaxValidatorFeature.test_feature_syntax_error_line_attribution",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000393,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestTSCNSchemaCheckerFeature.test_feature_load_steps_verification",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000668,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestTSCNSchemaCheckerFeature.test_feature_parent_child_hierarchy",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000433,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestTSCNSchemaCheckerFeature.test_feature_root_node_contract",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.001288,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestTSCNSchemaCheckerFeature.test_feature_script_attachment_integrity",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000712,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestTSCNSchemaCheckerFeature.test_feature_signal_connection_wiring",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000533,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestTSCNSchemaCheckerFeature.test_feature_valid_godot4_scene",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.000913,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestUnifiedVerificationPipelineFeature.test_feature_pipeline_blackboard_state_recording",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.001899,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestUnifiedVerificationPipelineFeature.test_feature_pipeline_complete_diagnostic_aggregation",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.004736,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestUnifiedVerificationPipelineFeature.test_feature_pipeline_error_routing_for_review",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.001147,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestUnifiedVerificationPipelineFeature.test_feature_pipeline_event_bus_events",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.002664,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestUnifiedVerificationPipelineFeature.test_feature_pipeline_fail_fast_stop",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.001659,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier1_features.test_verification_pipeline.TestUnifiedVerificationPipelineFeature.test_feature_pipeline_sequential_execution",
+      "tier": "tier1_features",
+      "status": "PASS",
+      "duration_seconds": 0.003367,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_01_empty_manifest_packaging",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000735,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_02_zero_byte_asset_handling",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.00075,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_03_none_file_bytes_handling",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000702,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_04_large_binary_asset",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.021383,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_05_special_characters_in_filenames",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000523,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_06_scene_with_no_nodes",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000258,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_07_scene_with_duplicate_roots",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000261,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_08_deeply_nested_nodes_hierarchy",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000516,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_09_orphan_node_referencing_nonexistent_parent",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.00025,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_10_node_referencing_unknown_script_id",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000234,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_11_node_referencing_unknown_instance",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000231,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_12_circular_or_unresolvable_parent_references",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000244,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_13_scene_with_zero_resources_load_steps",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000236,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_14_path_traversal_double_dot_parent",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000236,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_15_path_traversal_mixed_slashes",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000247,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_16_path_traversal_absolute_unix_path",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000234,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_17_path_traversal_res_prefix_strip",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000307,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_18_script_spec_path_traversal_rejection",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000244,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_19_asset_manifest_path_traversal_rejection",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000259,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_20_linker_with_none_manifest",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000245,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_21_linker_with_missing_texture_references",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.00024,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_22_linker_idempotence_already_linked",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000254,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_23_actor_already_has_sprite_no_duplicate_synthesis",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000264,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_24_physics_body_already_has_shape_no_duplicate",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000236,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_25_multiple_actors_distinct_shape_synthesis",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000263,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_26_linker_audio_autoloop_only_for_music",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000275,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_27_target_resolution_whitespace_and_casing",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000303,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_28_unregister_nonexistent_adapter",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000248,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_29_export_with_empty_scenes_and_scripts",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.00161,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_30_packaging_into_deeply_nested_nonexistent_dir",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000487,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_31_packaging_overwrite_false_preserves_existing",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000489,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_32_verify_hierarchy_on_empty_dir",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000375,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_33_verify_hierarchy_with_multiple_stray_and_empty_files",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000754,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_34_extreme_physics_parameters_platformer",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000449,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_35_grid_puzzle_board_randomization",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000506,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_engine_boundaries.TestEngineBoundaries.test_boundary_36_space_shooter_viewport_boundary_check",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000262,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestCliBoundaries.test_bnd_cli_01_port_lower_boundary",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000641,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestCliBoundaries.test_bnd_cli_02_port_upper_boundary",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000514,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestCliBoundaries.test_bnd_cli_03_port_valid_boundaries",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000514,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestCliBoundaries.test_bnd_cli_04_port_non_numeric",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000887,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestCliBoundaries.test_bnd_cli_05_headless_missing_prompt",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000494,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestCliBoundaries.test_bnd_cli_06_headless_whitespace_prompt",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000518,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestCliBoundaries.test_bnd_cli_07_invalid_engine_choice",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000869,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestCliBoundaries.test_bnd_cli_08_iterations_boundaries",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000536,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestDesktopAndPathBoundaries.test_bnd_env_07_display_detection_with_display_env",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.00026,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestDesktopAndPathBoundaries.test_bnd_env_08_desktop_window_headless_fallback",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000295,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestDesktopAndPathBoundaries.test_bnd_path_01_windows_backslashes_deep_nesting",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000269,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestDesktopAndPathBoundaries.test_bnd_path_02_windows_drive_letter_handling",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000238,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestDesktopAndPathBoundaries.test_bnd_path_03_mixed_slashes_and_double_separators",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000243,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestDesktopAndPathBoundaries.test_bnd_path_04_engine_res_scheme_stripping",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.00024,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestDesktopAndPathBoundaries.test_bnd_path_05_base_dir_traversal_detection",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000274,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestDesktopAndPathBoundaries.test_bnd_path_06_empty_string_normalization",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000294,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestRestApiBoundaries.test_bnd_rest_01_empty_prompt_400",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.007972,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestRestApiBoundaries.test_bnd_rest_02_whitespace_prompt_400",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.006953,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestRestApiBoundaries.test_bnd_rest_03_malformed_json_body_422",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.007817,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestRestApiBoundaries.test_bnd_rest_04_huge_prompt_payload",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.06484,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestRestApiBoundaries.test_bnd_rest_05_concurrent_run_conflict_409",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.009758,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestRestApiBoundaries.test_bnd_rest_06_missing_asset_id_404",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.007487,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestRestApiBoundaries.test_bnd_rest_07_asset_path_traversal_attack_dot_dot",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.006537,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestRestApiBoundaries.test_bnd_rest_08_asset_path_traversal_attack_slash",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.006301,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestRestApiBoundaries.test_bnd_rest_09_asset_with_empty_or_none_bytes",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.008329,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestRestApiBoundaries.test_bnd_rest_10_export_path_traversal_dot_dot",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.007271,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestRestApiBoundaries.test_bnd_rest_11_export_path_traversal_windows_backslash",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.007842,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestRestApiBoundaries.test_bnd_rest_12_verify_invalid_stage_400",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.007396,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestRestApiBoundaries.test_bnd_rest_13_verify_simulation_frames_range",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.008912,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestRestApiBoundaries.test_bnd_rest_14_logs_limit_boundaries",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.013017,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestRestApiBoundaries.test_bnd_rest_15_empty_blackboard_state_schema",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.008156,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestWebSocketBoundaries.test_bnd_ws_01_rapid_telemetry_burst_500",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.106575,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestWebSocketBoundaries.test_bnd_ws_02_invalid_non_json_client_message",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.007065,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestWebSocketBoundaries.test_bnd_ws_03_client_disconnect_pruning",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.007269,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestWebSocketBoundaries.test_bnd_ws_04_reconnection_catchup_backlog",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.007576,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestWebSocketBoundaries.test_bnd_ws_05_heartbeat_json_and_plaintext_variations",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.007591,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_gui_boundaries.TestWebSocketBoundaries.test_bnd_ws_06_concurrent_broadcast_to_multiple_clients",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.008464,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestAssetIntegrityBoundaries.test_boundary_filenames_with_spaces_and_unicode",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.001223,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestAssetIntegrityBoundaries.test_boundary_orphaned_assets",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000941,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestAssetIntegrityBoundaries.test_boundary_path_traversal_attempt",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000783,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestAssetIntegrityBoundaries.test_boundary_spoofed_file_extension",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000411,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestAssetIntegrityBoundaries.test_boundary_truncated_png",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000426,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestAssetIntegrityBoundaries.test_boundary_zero_byte_asset",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000394,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestEngineSimulatorBoundaries.test_boundary_empty_project_simulation",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000632,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestEngineSimulatorBoundaries.test_boundary_missing_dollar_node_lookup",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000673,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestEngineSimulatorBoundaries.test_boundary_missing_project_godot_fallback",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000545,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestEngineSimulatorBoundaries.test_boundary_negative_simulation_frames",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000393,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestEngineSimulatorBoundaries.test_boundary_physics_runaway_coordinates",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.00058,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestEngineSimulatorBoundaries.test_boundary_zero_simulation_frames",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000474,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestPipelineRunnerBoundaries.test_boundary_async_verification_method",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.001249,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestPipelineRunnerBoundaries.test_boundary_empty_project_directory",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000996,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestPipelineRunnerBoundaries.test_boundary_error_routing_partition",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000627,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestPipelineRunnerBoundaries.test_boundary_fail_fast_vs_complete_mode",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.00254,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestPipelineRunnerBoundaries.test_boundary_nonexistent_project_directory",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000675,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestPipelineRunnerBoundaries.test_boundary_warnings_only_passes_pipeline",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.001209,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestSyntaxValidatorBoundaries.test_boundary_deeply_nested_blocks",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000549,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestSyntaxValidatorBoundaries.test_boundary_empty_and_whitespace_files",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000289,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestSyntaxValidatorBoundaries.test_boundary_escaped_quotes_and_raw_strings",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000375,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestSyntaxValidatorBoundaries.test_boundary_mixed_tabs_and_spaces_in_indentation",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000295,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestSyntaxValidatorBoundaries.test_boundary_non_utf8_binary_script",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000378,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestSyntaxValidatorBoundaries.test_boundary_unclosed_delimiters",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000357,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestSyntaxValidatorBoundaries.test_boundary_utf8_special_chars_and_bom",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000397,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestTSCNSchemaBoundaries.test_boundary_cyclic_node_parenting",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000318,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestTSCNSchemaBoundaries.test_boundary_deeply_nested_scene_paths",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000302,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestTSCNSchemaBoundaries.test_boundary_duplicate_ext_resource_ids",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000264,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestTSCNSchemaBoundaries.test_boundary_duplicate_sibling_nodes",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000245,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestTSCNSchemaBoundaries.test_boundary_missing_parent_reference",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000249,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestTSCNSchemaBoundaries.test_boundary_multiple_root_nodes",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.000254,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestTSCNSchemaBoundaries.test_boundary_self_parenting_node",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.00025,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier2_boundaries.test_verification_boundaries.TestTSCNSchemaBoundaries.test_boundary_zero_nodes_scene",
+      "tier": "tier2_boundaries",
+      "status": "PASS",
+      "duration_seconds": 0.00023,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_01_openai_gdd_blackboard_eventbus",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.001318,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_02_gdd_requirements_gemini_manifest_binding",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.113643,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_03_gdd_scenes_claude_engine_code_ast",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.121019,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_04_gemini_assets_claude_ast_linker_godot_serializer",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.10559,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_05_claude_ast_engine_hub_pygame_adapter",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.008195,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_06_claude_ast_engine_hub_html5_adapter",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.028142,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_07_claude_ast_engine_hub_unity_adapter",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.008087,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_08_exported_project_verification_pipeline",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.106756,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_09_fastapi_direct_background_task_websocket_telemetry",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.137543,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_10_rate_limiting_circuit_breaker_mock_fallback",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.001312,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_11_rest_api_export_clean_hierarchy",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.019975,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_12_directing_panel_parameter_reconfiguration",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.12028,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_13_dynamic_asset_linker_collision_synthesis",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.000536,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_14_multi_format_audio_checksum_and_magic_bytes",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.001831,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_15_log_inspector_concurrent_streaming",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.009103,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_16_review_loop_script_syntax_repair",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.118525,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_17_review_loop_missing_asset_repair",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.116623,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_18_engine_hub_multi_export_godot_and_pygame",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.007633,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_19_web_adapter_canvas_resolution_and_manifest",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.006898,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_20_unity_adapter_csharp_scene_builder_ast_mapping",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.007203,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_21_gdd_dialogue_quest_docs_packaging",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.00099,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_22_blackboard_concurrency_thread_safety",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.003971,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_23_directing_api_invalid_payload_preserves_blackboard",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.007428,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_24_asset_verifier_corrupt_magic_bytes_detection",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.001009,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_25_cli_headless_build_full_pipeline",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.182641,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_26_blackboard_token_usage_metrics_aggregation",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.001429,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_27_dynamic_asset_linker_unlinked_asset_handling",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.007116,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier3_combinations.test_full_pipeline_combinations.TestFullPipelineCombinations.test_combo_28_eventbus_wildcard_topic_routing",
+      "tier": "tier3_combinations",
+      "status": "PASS",
+      "duration_seconds": 0.000611,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier4_applications.test_real_world_games.TestRealWorldGames.test_s01_neon_cyber_runner_godot4",
+      "tier": "tier4_applications",
+      "status": "PASS",
+      "duration_seconds": 0.144884,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier4_applications.test_real_world_games.TestRealWorldGames.test_s02_dungeon_crawler_rpg",
+      "tier": "tier4_applications",
+      "status": "PASS",
+      "duration_seconds": 0.154178,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier4_applications.test_real_world_games.TestRealWorldGames.test_s03_retro_cosmic_defender",
+      "tier": "tier4_applications",
+      "status": "PASS",
+      "duration_seconds": 0.125037,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier4_applications.test_real_world_games.TestRealWorldGames.test_s04_ancient_glyph_puzzle",
+      "tier": "tier4_applications",
+      "status": "PASS",
+      "duration_seconds": 0.12645,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier4_applications.test_real_world_games.TestRealWorldGames.test_s05_unity_project_export",
+      "tier": "tier4_applications",
+      "status": "PASS",
+      "duration_seconds": 0.008153,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier4_applications.test_real_world_games.TestRealWorldGames.test_s06_mock_offline_studio_generation",
+      "tier": "tier4_applications",
+      "status": "PASS",
+      "duration_seconds": 0.21287,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier4_applications.test_real_world_games.TestRealWorldGames.test_s07_live_gui_directed_workflow",
+      "tier": "tier4_applications",
+      "status": "PASS",
+      "duration_seconds": 0.166835,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier4_applications.test_real_world_games.TestRealWorldGames.test_s08_multi_room_metroidvania",
+      "tier": "tier4_applications",
+      "status": "PASS",
+      "duration_seconds": 0.13896,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier4_applications.test_real_world_games.TestRealWorldGames.test_s09_branching_dialogue_quest_rpg",
+      "tier": "tier4_applications",
+      "status": "PASS",
+      "duration_seconds": 0.008263,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier4_applications.test_real_world_games.TestRealWorldGames.test_s10_asset_heavy_dynamic_loader",
+      "tier": "tier4_applications",
+      "status": "PASS",
+      "duration_seconds": 0.024672,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier4_applications.test_real_world_games.TestRealWorldGames.test_s11_resilient_rate_limit_recovery",
+      "tier": "tier4_applications",
+      "status": "PASS",
+      "duration_seconds": 0.201712,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier4_applications.test_real_world_games.TestRealWorldGames.test_s12_cross_engine_multi_export_pipeline",
+      "tier": "tier4_applications",
+      "status": "PASS",
+      "duration_seconds": 0.037848,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialBlackboardConcurrency.test_blackboard_concurrent_read_write_consistency_no_torn_reads",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.925075,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialBlackboardConcurrency.test_blackboard_high_concurrency_parallel_async_state_writes",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.34407,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialBlackboardConcurrency.test_blackboard_high_volume_token_usage_contention",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.067964,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialBlackboardConcurrency.test_blackboard_rapid_rollback_under_high_write_pressure",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.087268,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialEventBus.test_eventbus_deep_recursion_cascading_events",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.010168,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialEventBus.test_eventbus_high_throughput_burst_flood",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 6.930956,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialEventBus.test_eventbus_rapid_concurrent_unsubscription_during_flood",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.013365,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialEventBus.test_eventbus_subscriber_exception_and_cancellation_isolation",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.013487,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialEventBus.test_eventbus_wildcard_redos_exponential_backtracking",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000334,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialRestApiFuzzing.test_rest_asset_path_traversal_fuzzing",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.015623,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialRestApiFuzzing.test_rest_direct_fuzzing_and_payload_injections",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.468559,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialRestApiFuzzing.test_rest_export_illegal_output_paths_and_injection",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.015767,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialRestApiFuzzing.test_rest_export_manifest_files_created_attribute_resilience",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.013372,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialRestApiFuzzing.test_rest_verify_endpoint_stage_fuzzing",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.01145,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialSecurityResilience.test_circuit_breaker_half_open_concurrency_leak_probe",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.05085,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialSecurityResilience.test_circuit_breaker_half_open_failure_re_trip",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.050894,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialSecurityResilience.test_circuit_breaker_rapid_failure_tripping_and_recovery",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.061173,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialSecurityResilience.test_rate_limiter_high_concurrency_race_conditions",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.004783,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialSecurityResilience.test_rate_limiter_oversized_token_request_starvation",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.082037,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialSecurityResilience.test_rate_limiter_token_exhaustion_and_burst",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.102531,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialSecurityResilience.test_secret_masker_adversarial_corrupted_and_unusual_logs",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.001705,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialWebSocketTelemetry.test_websocket_backpressure_and_client_exception_resilience",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.001307,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialWebSocketTelemetry.test_websocket_historical_catchup_under_churn",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.00908,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialWebSocketTelemetry.test_websocket_rapid_burst_churn_50_clients",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.131279,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_core_gui.TestAdversarialWebSocketTelemetry.test_websocket_slow_client_head_of_line_blocking_empirical",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.075526,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialAssetVerifier.test_asset_corrupted_jpeg_ogg_mp3",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000683,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialAssetVerifier.test_asset_corrupted_json_syntax",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000547,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialAssetVerifier.test_asset_corrupted_png_magic_bytes",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000403,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialAssetVerifier.test_asset_corrupted_svg_missing_tags_or_non_utf8",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000411,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialAssetVerifier.test_asset_corrupted_wav_missing_riff_or_wave",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000376,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialAssetVerifier.test_asset_invalid_png_dimensions_zero_or_negative",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000384,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialAssetVerifier.test_asset_missing_referenced_file",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.001023,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialAssetVerifier.test_asset_orphan_detection_warning_vs_error",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.001561,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialAssetVerifier.test_asset_path_traversal_absolute_escape",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000735,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialAssetVerifier.test_asset_path_traversal_relative_dot_dot",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.00078,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialAssetVerifier.test_asset_truncated_png_less_than_24_bytes",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000376,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialAssetVerifier.test_asset_truncated_wav_less_than_12_bytes",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000377,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialAssetVerifier.test_asset_zero_byte_png_wav_files",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000523,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialDynamicAssetLinker.test_linker_already_bound_properties",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000532,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialDynamicAssetLinker.test_linker_empty_manifest_and_gdd",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000417,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialDynamicAssetLinker.test_linker_prefix_stripping_and_case_insensitivity",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000419,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialDynamicAssetLinker.test_linker_procedural_build_scene_from_malformed_plan",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000409,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialDynamicAssetLinker.test_linker_resolve_nonexistent_asset",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000353,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialDynamicAssetLinker.test_linker_synthesis_under_complex_hierarchy",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000493,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialDynamicAssetLinker.test_linker_validate_bindings_flags_missing_ext_and_sub_resources",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000405,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialDynamicAssetLinker.test_linker_validate_bindings_flags_missing_manifest_assets",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000394,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineAST.test_ast_circular_parent_loop_direct",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000469,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineAST.test_ast_circular_parent_loop_transitive",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000504,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineAST.test_ast_core_vs_engine_model_compatibility",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000527,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineAST.test_ast_duplicate_ext_resource_id_collision",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000576,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineAST.test_ast_duplicate_root_nodes_prevention",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000452,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineAST.test_ast_duplicate_sibling_node_names",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000474,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineAST.test_ast_duplicate_sub_resource_id_collision",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000445,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineAST.test_ast_empty_node_tree",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000417,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineAST.test_ast_missing_parent_reference",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000445,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineAST.test_ast_missing_root_node_detection",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000455,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineAST.test_ast_missing_script_ext_resource_reference",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000432,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineAST.test_ast_multiple_roots_validation",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000457,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineAST.test_ast_script_reference_wrong_resource_type",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000517,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineAST.test_ast_self_parenting",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000432,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineSimulator.test_sim_corrupted_main_scene_tscn",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000734,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineSimulator.test_sim_dual_mode_fallback_to_mock_when_godot_missing",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000924,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineSimulator.test_sim_inf_coordinates_boundary_condition",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000902,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineSimulator.test_sim_missing_main_scene_fails_gracefully",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000546,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineSimulator.test_sim_missing_root_node_in_scene",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000708,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineSimulator.test_sim_nan_coordinates_boundary_condition",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000865,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineSimulator.test_sim_negative_frames_raises_value_error",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000416,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineSimulator.test_sim_orphan_nodes_without_root_fallback_behavior",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000782,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineSimulator.test_sim_physics_runaway_coordinates_exceed_bounds",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000908,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineSimulator.test_sim_script_missing_child_dollar_node_reference",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000922,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineSimulator.test_sim_timeout_boundary_condition",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000765,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialEngineSimulator.test_sim_zero_frames_instant_success",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000726,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialMultiEngineHub.test_hub_duplicate_adapter_registration_without_override",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000441,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialMultiEngineHub.test_hub_export_multi_engine_isolation",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.002106,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialMultiEngineHub.test_hub_list_supported_engines_contains_all_targets",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000494,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialMultiEngineHub.test_hub_override_adapter_registration",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.00045,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialMultiEngineHub.test_hub_unknown_target_engine_defaults_to_godot4",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000541,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialMultiEngineHub.test_hub_unregister_adapter_and_query_missing",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000404,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialTSCNValidator.test_tscn_empty_text",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000387,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialTSCNValidator.test_tscn_instance_unknown_resource",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000572,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialTSCNValidator.test_tscn_instance_wrong_type",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.00057,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialTSCNValidator.test_tscn_invalid_format_version",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000577,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialTSCNValidator.test_tscn_load_steps_discrepancy",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000573,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialTSCNValidator.test_tscn_malformed_header_syntax",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000513,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialTSCNValidator.test_tscn_missing_gd_scene_header",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000501,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialTSCNValidator.test_tscn_nonexistent_disk_resource",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000584,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialTSCNValidator.test_tscn_out_of_order_topological_nodes",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000552,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialTSCNValidator.test_tscn_path_traversal_in_ext_resource",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000529,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialTSCNValidator.test_tscn_project_scenes_nonexistent_directory",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000483,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialTSCNValidator.test_tscn_resource_path_not_res",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.00054,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialTSCNValidator.test_tscn_signal_connection_empty_signal_or_method",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000441,
+      "error": null,
+      "traceback": null
+    },
+    {
+      "id": "tests.tier5_adversarial.test_adversarial_engine_verification.TestAdversarialTSCNValidator.test_tscn_signal_connection_missing_emitter_or_receiver",
+      "tier": "tier5_adversarial",
+      "status": "PASS",
+      "duration_seconds": 0.000594,
+      "error": null,
+      "traceback": null
+    }
+  ]
+}
