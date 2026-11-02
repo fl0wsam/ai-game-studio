@@ -237,7 +237,7 @@ class StudioApp {
             launchBtn.addEventListener('click', async () => {
                 const prompt = (promptInput?.value || '').trim();
                 if (!prompt) {
-                    alert('Please enter a game idea prompt before launching.');
+                    this.notify('Add a game idea before building.', 'warning');
                     return;
                 }
                 const engine = document.getElementById('selectEngine')?.value || 'godot4';
@@ -280,10 +280,10 @@ class StudioApp {
                         }
                     } else {
                         const err = await res.json();
-                        alert(`Launch error: ${err.detail || 'Failed to start'}`);
+                        this.notify(`Launch error: ${err.detail || 'Failed to start'}`, 'error');
                     }
                 } catch (e) {
-                    alert(`Network error: ${e.message}`);
+                    this.notify(`Network error: ${e.message}`, 'error');
                 } finally {
                     launchBtn.disabled = false;
                     launchBtn.textContent = '▶ Build My Game';
@@ -298,7 +298,7 @@ class StudioApp {
             refineBtn.addEventListener('click', async () => {
                 const prompt = (refineInput?.value || '').trim();
                 if (!prompt) {
-                    alert('Please enter a refinement instruction (e.g. increase player speed, add more lives, change colors).');
+                    this.notify('Describe one change for the team to make.', 'warning');
                     return;
                 }
 
@@ -317,13 +317,13 @@ class StudioApp {
                         const data = await res.json();
                         this.log('CLAUDE', 'SUCCESS', `Refinement applied: ${data.message} (v${data.version})`);
                         await this.fetchProjectState();
-                        alert(`Refinement applied successfully!\n${data.message}\nClick 'Play Game' or refresh the game window to test.`);
+                        this.notify('Change applied. Open Play Game to try it.', 'success');
                     } else {
                         const err = await res.json();
-                        alert(`Refinement error: ${err.detail || 'Failed to refine'}`);
+                        this.notify(`Refinement error: ${err.detail || 'Failed to refine'}`, 'error');
                     }
                 } catch (e) {
-                    alert(`Network error: ${e.message}`);
+                    this.notify(`Network error: ${e.message}`, 'error');
                 } finally {
                     refineBtn.disabled = false;
                     refineBtn.innerHTML = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline></svg> <span>Refine Game</span>';
@@ -351,14 +351,14 @@ class StudioApp {
                     });
                     if (res.ok) {
                         const data = await res.json();
-                        alert(`Game project exported successfully!\nPath: ${data.output_dir}\nTotal files: ${data.total_files}`);
+                        this.notify(`Project exported: ${data.total_files} files`, 'success');
                         this.log('PACKAGER', 'SUCCESS', `Project permanently exported to ${data.output_dir} (${data.total_files} files)`);
                     } else {
                         const err = await res.json();
-                        alert(`Export error: ${err.detail || 'Failed'}`);
+                        this.notify(`Export error: ${err.detail || 'Failed'}`, 'error');
                     }
                 } catch (e) {
-                    alert(`Export error: ${e.message}`);
+                    this.notify(`Export error: ${e.message}`, 'error');
                 } finally {
                     exportBtn.disabled = false;
                     exportBtn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> <span>Export Game</span>';
@@ -382,7 +382,7 @@ class StudioApp {
                         this.log('VALIDATOR', data.passed ? 'SUCCESS' : 'ERROR', `Verification: ${data.passed ? 'PASSED' : 'FAILED'}`);
                     }
                 } catch (e) {
-                    alert(`Verification error: ${e.message}`);
+                    this.notify(`Verification error: ${e.message}`, 'error');
                 } finally {
                     verifyBtn.disabled = false;
                     verifyBtn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> <span>Verify Project</span>';
@@ -422,6 +422,20 @@ class StudioApp {
                 projectInput.value = projectInput.value.replace(/\s+/g, ' ').slice(0, 60);
             });
         }
+    }
+
+    notify(message, type = 'info') {
+        const region = document.getElementById('toastRegion');
+        if (!region) return;
+        const toast = document.createElement('div');
+        toast.className = `toast toast-${type}`;
+        toast.innerHTML = `<span class="toast-mark" aria-hidden="true"></span><span>${this.escapeHtml(message)}</span>`;
+        region.appendChild(toast);
+        requestAnimationFrame(() => toast.classList.add('visible'));
+        window.setTimeout(() => {
+            toast.classList.remove('visible');
+            window.setTimeout(() => toast.remove(), 220);
+        }, 3600);
     }
 
     // ------------------------------------------------------------------------
