@@ -96,6 +96,11 @@
         Offline Mock
       </label>
 
+      <label class="guided-toggle">
+        <input type="checkbox" id="checkGuided" checked>
+        Guided lesson
+      </label>
+
       <button id="btnLaunch" class="btn btn-primary">▶ Build My Game</button>
     </div>
 
@@ -164,6 +169,67 @@
         <div class="director-team-card claude-team"><span class="team-avatar">C</span><span><b>Claude</b><small>Game programmer</small></span></div>
         <div class="director-team-card gemini-team"><span class="team-avatar">G</span><span><b>Gemini</b><small>Artist and sound maker</small></span></div>
       </div>
+    </div>
+  </section>
+
+  <section id="directorLesson" class="director-lesson" aria-labelledby="directorLessonTitle">
+    <div class="lesson-heading">
+      <div>
+        <div class="director-kicker">LEARN HOW A STUDIO WORKS</div>
+        <h2 id="directorLessonTitle">Make four director decisions before the team builds</h2>
+        <p>There is no “right” answer. Your choices give the designers, programmer, and artist a clear target instead of a random game.</p>
+      </div>
+      <span class="lesson-badge">1 lesson · 4 decisions</span>
+    </div>
+
+    <div class="lesson-grid">
+      <label class="lesson-field">
+        <span><b>1. Who is the game for?</b><small>Designers use this to choose difficulty.</small></span>
+        <select id="lessonAudience">
+          <option value="">Choose an audience</option>
+          <option value="kids ages 7 to 12">Kids ages 7–12</option>
+          <option value="families playing together">Families playing together</option>
+          <option value="new players learning games">New players learning games</option>
+        </select>
+      </label>
+      <label class="lesson-field">
+        <span><b>2. What does the player do?</b><small>This is the core mechanic.</small></span>
+        <select id="lessonMechanic">
+          <option value="">Choose a core mechanic</option>
+          <option value="explore and collect">Explore and collect</option>
+          <option value="solve puzzles">Solve puzzles</option>
+          <option value="dodge obstacles">Dodge obstacles</option>
+          <option value="build and decorate">Build and decorate</option>
+        </select>
+      </label>
+      <label class="lesson-field">
+        <span><b>3. What should it feel like?</b><small>Artists and audio makers follow this mood.</small></span>
+        <select id="lessonMood">
+          <option value="">Choose a mood</option>
+          <option value="cheerful and colorful">Cheerful and colorful</option>
+          <option value="calm and cozy">Calm and cozy</option>
+          <option value="mysterious but not scary">Mysterious but not scary</option>
+          <option value="silly and surprising">Silly and surprising</option>
+        </select>
+      </label>
+      <label class="lesson-field">
+        <span><b>4. How does the player win?</b><small>A clear goal makes testing possible.</small></span>
+        <select id="lessonGoal">
+          <option value="">Choose a win condition</option>
+          <option value="collect three special items">Collect three special items</option>
+          <option value="reach the finish before time runs out">Reach the finish before time runs out</option>
+          <option value="complete three short challenges">Complete three short challenges</option>
+          <option value="help a friendly character">Help a friendly character</option>
+        </select>
+      </label>
+    </div>
+
+    <div id="lessonPlan" class="lesson-plan" hidden>
+      <div>
+        <span class="director-kicker">YOUR FIRST GAME PLAN</span>
+        <p id="lessonPlanText"></p>
+      </div>
+      <button id="btnApproveLesson" class="btn btn-primary" type="button">Approve plan &amp; build</button>
     </div>
   </section>
 

@@ -14,6 +14,7 @@ class StudioApp {
         this.activeAudio = null;
         this.eqInterval = null;
         this.projectNameEdited = false;
+        this.guidedLessonApproved = false;
 
         document.addEventListener('DOMContentLoaded', () => this.init());
     }
@@ -225,6 +226,7 @@ class StudioApp {
         const playBtn = document.getElementById('btnPlayGame');
         const promptInput = document.getElementById('inputPrompt');
         const projectNameInput = document.getElementById('inputProjectName');
+        const guidedToggle = document.getElementById('checkGuided');
 
         if (playBtn) {
             playBtn.addEventListener('click', (e) => {
@@ -235,7 +237,12 @@ class StudioApp {
 
         if (launchBtn) {
             launchBtn.addEventListener('click', async () => {
-                const prompt = (promptInput?.value || '').trim();
+                if (guidedToggle?.checked && !this.guidedLessonApproved) {
+                    if (!this.prepareGuidedLesson()) return;
+                    return;
+                }
+
+                const prompt = (guidedToggle?.checked ? this.composeGuidedPrompt() : promptInput?.value || '').trim();
                 if (!prompt) {
                     this.notify('Add a game idea before building.', 'warning');
                     return;
@@ -416,12 +423,76 @@ class StudioApp {
 
     setupDirectorWorkflow() {
         const projectInput = document.getElementById('inputProjectName');
+        const promptInput = document.getElementById('inputPrompt');
+        const lessonPlan = document.getElementById('lessonPlan');
+        const approveButton = document.getElementById('btnApproveLesson');
+        const guidedToggle = document.getElementById('checkGuided');
+        const lessonFields = ['lessonAudience', 'lessonMechanic', 'lessonMood', 'lessonGoal']
+            .map(id => document.getElementById(id))
+            .filter(Boolean);
+
         if (projectInput) {
             projectInput.addEventListener('input', () => {
                 this.projectNameEdited = true;
                 projectInput.value = projectInput.value.replace(/\s+/g, ' ').slice(0, 60);
             });
         }
+
+        const resetLesson = () => {
+            this.guidedLessonApproved = false;
+            if (lessonPlan) lessonPlan.hidden = true;
+            if (approveButton) approveButton.textContent = 'Approve plan & build';
+        };
+
+        lessonFields.forEach(field => field.addEventListener('change', resetLesson));
+        promptInput?.addEventListener('input', resetLesson);
+        guidedToggle?.addEventListener('change', () => {
+            resetLesson();
+            if (guidedToggle.checked) {
+                this.notify('Guided lesson is on: make four decisions, then review the plan.', 'info');
+            }
+        });
+        approveButton?.addEventListener('click', () => {
+            this.guidedLessonApproved = true;
+            document.getElementById('btnLaunch')?.click();
+        });
+    }
+
+    getGuidedLessonSelections() {
+        return {
+            audience: document.getElementById('lessonAudience')?.value || '',
+            mechanic: document.getElementById('lessonMechanic')?.value || '',
+            mood: document.getElementById('lessonMood')?.value || '',
+            goal: document.getElementById('lessonGoal')?.value || ''
+        };
+    }
+
+    composeGuidedPrompt() {
+        const selections = this.getGuidedLessonSelections();
+        const name = (document.getElementById('inputProjectName')?.value || 'My First Game').trim();
+        return `Create a kid-friendly 2D game called "${name}". It is for ${selections.audience}. The core mechanic is to ${selections.mechanic}. The game should feel ${selections.mood}. The player wins when they ${selections.goal}. Teach the player with a short introduction, clear controls, gentle difficulty, readable feedback, and a simple victory screen. Keep the scope small enough to finish and test in one playable browser demo.`;
+    }
+
+    prepareGuidedLesson() {
+        const selections = this.getGuidedLessonSelections();
+        const missing = Object.entries(selections).filter(([, value]) => !value);
+        if (missing.length) {
+            const firstMissing = document.getElementById(`lesson${missing[0][0][0].toUpperCase()}${missing[0][0].slice(1)}`);
+            firstMissing?.focus();
+            this.notify(`Choose ${missing.length === 1 ? 'the last decision' : `${missing.length} more decisions`} before reviewing the plan.`, 'warning');
+            return false;
+        }
+
+        const plan = document.getElementById('lessonPlan');
+        const planText = document.getElementById('lessonPlanText');
+        const promptInput = document.getElementById('inputPrompt');
+        if (planText) {
+            planText.textContent = `A ${selections.mood} game for ${selections.audience}. Players will ${selections.mechanic} and win when they ${selections.goal}. The AI team will use this plan to keep the first build focused.`;
+        }
+        if (promptInput) promptInput.value = this.composeGuidedPrompt();
+        if (plan) plan.hidden = false;
+        this.notify('Great director work. Read your plan, then approve it to start the build.', 'success');
+        return true;
     }
 
     notify(message, type = 'info') {
