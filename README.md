@@ -38,24 +38,39 @@ AI Game Studio divides game production labor across specialized agent roles:
 git clone https://github.com/fl0wsam/ai_game_studio.git
 cd ai_game_studio
 
-# Install dependencies
-pip install -e .
+# Create an isolated environment and install dependencies
+python3 -m venv .venv
+.venv/bin/python -m pip install -e '.[dev]'
 ```
 
 ### Running the IDE Dashboard
 
 ```bash
-# Launch the web IDE on port 8080 (offline mock mode by default)
-python3 -m studio.cli --gui --no-browser --port 8080
+# Launch the web IDE on port 8080 without opening a browser
+.venv/bin/python -m studio.cli --gui --no-browser --port 8080
 ```
 
 Open `http://localhost:8080` in your browser.
+
+### First game: Director mode
+
+The dashboard is designed as a small studio control room for learning how game teams work:
+
+1. Pick a starter template, or describe your own game idea.
+2. Give the project a name such as `Rocket Garden`.
+3. Keep **Offline Mock** enabled for a free, deterministic demo with no API keys.
+4. Click **Build My Game** and watch the stages move from Imagine to Plan to Build to Play.
+5. Click **Play Game** when the demo is ready, then use **Refine Game** to request a small change.
+
+The project name is the director's workspace name. The AI may create a different in-game title
+for the generated GDD; both are shown separately so children can see the difference between
+running a studio project and designing the game inside it.
 
 ### Headless CLI Generation
 
 ```bash
 # Generate a playable web game from a text prompt
-python3 -m studio.cli --headless \
+.venv/bin/python -m studio.cli --headless \
   --prompt "Cyberpunk ninja runner with high-speed obstacles and synthwave audio" \
   --engine web_html5 \
   --output-dir ./output \
@@ -69,7 +84,7 @@ AI Game Studio comes with a comprehensive multi-tier test suite:
 
 ```bash
 # Run all test tiers (Tiers 1-5)
-python3 tests/test_runner.py --tier all
+.venv/bin/python tests/test_runner.py --tier all
 ```
 
 ## Architecture

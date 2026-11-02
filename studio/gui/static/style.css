@@ -409,6 +409,220 @@ body {
 }
 
 /* ============================================================================
+   DIRECTOR CONTROL ROOM
+   ============================================================================ */
+.director-deck {
+  display: grid;
+  grid-template-columns: minmax(240px, 1.1fr) minmax(360px, 1.8fr) minmax(220px, 1fr);
+  gap: 16px;
+  padding: 16px 18px;
+  background: linear-gradient(110deg, #21183a 0%, #161a2b 48%, #102331 100%);
+  border-bottom: 1px solid var(--ide-border-dark);
+  color: var(--text-main);
+}
+
+.director-welcome {
+  min-width: 0;
+}
+
+.director-kicker,
+.director-team-heading,
+.director-progress-heading > span {
+  color: #c4b5fd;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.director-welcome h1 {
+  margin: 4px 0 5px;
+  font-size: clamp(18px, 2vw, 25px);
+  line-height: 1.1;
+}
+
+.director-welcome p {
+  max-width: 520px;
+  color: #d4d4d8;
+  font-size: 12px;
+}
+
+.director-project {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  color: #cbd5e1;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.director-project input {
+  min-width: 0;
+  width: 180px;
+  padding: 6px 9px;
+  border: 1px solid #554b82;
+  border-radius: 5px;
+  background: rgba(8, 10, 22, 0.72);
+  color: var(--text-main);
+  font: inherit;
+}
+
+.director-project input:focus,
+.director-project input:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 1px;
+}
+
+.director-generated-title {
+  margin-top: 5px;
+  color: #a1a1aa;
+  font-size: 10px;
+}
+
+.director-progress {
+  align-self: center;
+  min-width: 0;
+}
+
+.director-progress-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.director-progress-heading strong {
+  color: #fef3c7;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.director-stages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  list-style: none;
+}
+
+.director-stage {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  padding: 8px 7px;
+  border: 1px solid #32364c;
+  border-radius: 6px;
+  background: rgba(9, 12, 24, 0.52);
+  color: #8f96aa;
+}
+
+.director-stage b,
+.director-stage small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.director-stage b {
+  color: #cbd5e1;
+  font-size: 11px;
+}
+
+.director-stage small {
+  margin-top: 2px;
+  color: #81879a;
+  font-size: 9px;
+}
+
+.stage-number {
+  display: grid;
+  flex: 0 0 21px;
+  width: 21px;
+  height: 21px;
+  place-items: center;
+  border: 1px solid #4b5563;
+  border-radius: 50%;
+  appearance: none;
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+.director-stage.active {
+  border-color: #a78bfa;
+  background: rgba(124, 58, 237, 0.22);
+  box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.16);
+}
+
+.director-stage.active .stage-number {
+  border-color: #c4b5fd;
+  background: #8b5cf6;
+  color: #fff;
+}
+
+.director-stage.complete {
+  border-color: rgba(34, 197, 94, 0.5);
+}
+
+.director-stage.complete .stage-number {
+  border-color: #4ade80;
+  background: #166534;
+  color: #dcfce7;
+}
+
+.director-team {
+  align-self: center;
+}
+
+.director-team-grid {
+  display: grid;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.director-team-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 7px;
+  border-radius: 5px;
+  background: rgba(9, 12, 24, 0.52);
+  border: 1px solid #32364c;
+}
+
+.director-team-card b,
+.director-team-card small {
+  display: block;
+}
+
+.director-team-card b {
+  font-size: 11px;
+}
+
+.director-team-card small {
+  color: #a1a1aa;
+  font-size: 9px;
+}
+
+.team-avatar {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border-radius: 7px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.openai-team .team-avatar { background: var(--color-openai-subtle); color: #6ee7b7; }
+.claude-team .team-avatar { background: var(--color-claude-subtle); color: #fdba74; }
+.gemini-team .team-avatar { background: var(--color-gemini-subtle); color: #7dd3fc; }
+
+/* ============================================================================
    IDE WORKSPACE MULTI-PANE DOCK LAYOUT (Unity / Godot Editor Style)
    ============================================================================ */
 .ide-workspace {
@@ -621,6 +835,11 @@ body {
   align-items: center;
   gap: 5px;
   transition: all 0.12s ease;
+}
+
+.chip:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 2px;
 }
 
 .term-tab:hover {
@@ -958,3 +1177,49 @@ body {
 
 /* Backward Compatibility for legacy classes */
 .main-layout { display: contents; }
+
+@media (max-width: 1050px) {
+  .director-deck {
+    grid-template-columns: 1fr 1.4fr;
+  }
+
+  .director-team {
+    grid-column: 1 / -1;
+  }
+
+  .director-team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  body {
+    overflow: auto;
+  }
+
+  .director-deck {
+    grid-template-columns: 1fr;
+  }
+
+  .director-team,
+  .director-team-grid {
+    grid-column: auto;
+  }
+
+  .director-team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .director-stages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .director-project {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .director-project input {
+    width: 100%;
+  }
+}

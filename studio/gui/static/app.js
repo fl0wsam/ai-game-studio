@@ -13,6 +13,7 @@ class StudioApp {
         this.autoScrollLogs = true;
         this.activeAudio = null;
         this.eqInterval = null;
+        this.projectNameEdited = false;
 
         document.addEventListener('DOMContentLoaded', () => this.init());
     }
@@ -23,6 +24,7 @@ class StudioApp {
         window.studioApp = this;
 
         this.setupDirectingControls();
+        this.setupDirectorWorkflow();
         this.setupTabs();
         this.setupGalleryFilters();
         this.setupTerminalControls();
@@ -173,6 +175,9 @@ class StudioApp {
 
         // HUD update
         this.setHUDStatus(state.status, state.active_phase);
+        const projectName = state.project_name;
+        const projectInput = document.getElementById('inputProjectName');
+        if (projectInput && projectName && !this.projectNameEdited) projectInput.value = projectName;
 
         // Assets populate
         if (state.asset_manifest && Array.isArray(state.asset_manifest.items)) {
@@ -219,6 +224,7 @@ class StudioApp {
         const verifyBtn = document.getElementById('btnVerify');
         const playBtn = document.getElementById('btnPlayGame');
         const promptInput = document.getElementById('inputPrompt');
+        const projectNameInput = document.getElementById('inputProjectName');
 
         if (playBtn) {
             playBtn.addEventListener('click', (e) => {
@@ -236,6 +242,7 @@ class StudioApp {
                 }
                 const engine = document.getElementById('selectEngine')?.value || 'godot4';
                 const mock = document.getElementById('checkMock')?.checked ?? true;
+                const projectName = (projectNameInput?.value || '').trim() || 'My First Game';
 
                 // Clear stale assets and state immediately in GUI
                 this.assets = [];
@@ -261,7 +268,7 @@ class StudioApp {
                             target_engine: engine,
                             genre: 'auto',
                             mock: mock,
-                            project_name: `Game_${Date.now()}`
+                            project_name: projectName
                         })
                     });
 
@@ -279,7 +286,7 @@ class StudioApp {
                     alert(`Network error: ${e.message}`);
                 } finally {
                     launchBtn.disabled = false;
-                    launchBtn.textContent = '▶ Build Game (Launch Agents)';
+                    launchBtn.textContent = '▶ Build My Game';
                 }
             });
         }
@@ -389,6 +396,12 @@ class StudioApp {
                 const preset = chip.getAttribute('data-preset');
                 if (preset && promptInput) {
                     promptInput.value = preset;
+                    const presetProjectName = chip.getAttribute('data-project-name');
+                    const projectNameInput = document.getElementById('inputProjectName');
+                    if (presetProjectName && projectNameInput) {
+                        projectNameInput.value = presetProjectName;
+                        this.projectNameEdited = true;
+                    }
                     const engineSelect = document.getElementById('selectEngine');
                     const genreBadge = document.getElementById('badgeDetectedGenre');
                     const presetGenre = chip.getAttribute('data-genre');
@@ -399,6 +412,16 @@ class StudioApp {
                 }
             });
         });
+    }
+
+    setupDirectorWorkflow() {
+        const projectInput = document.getElementById('inputProjectName');
+        if (projectInput) {
+            projectInput.addEventListener('input', () => {
+                this.projectNameEdited = true;
+                projectInput.value = projectInput.value.replace(/\s+/g, ' ').slice(0, 60);
+            });
+        }
     }
 
     // ------------------------------------------------------------------------
@@ -800,7 +823,7 @@ class StudioApp {
         const rootLabel = document.getElementById('treeRootLabel');
         if (!container) return;
 
-        const projectName = state.gdd?.title || state.project_name || 'Project';
+        const projectName = state.project_name || 'Project';
         const engine = state.target_engine || 'godot4';
         if (rootLabel) {
             rootLabel.textContent = `res:// [${projectName}] (${engine})`;
@@ -958,6 +981,43 @@ class StudioApp {
         const phaseEl = document.getElementById('hudActivePhase');
         if (statusEl) statusEl.textContent = String(status || 'PENDING').toUpperCase();
         if (phaseEl) phaseEl.textContent = String(phase || 'INIT').toUpperCase();
+        this.updateDirectorWorkflow(status, phase);
+    }
+
+    updateDirectorWorkflow(status, phase) {
+        const statusText = String(status || '').toLowerCase();
+        const phaseText = String(phase || '').toLowerCase();
+        let currentStage = 'idea';
+        let message = 'Ready for your first idea';
+
+        if (statusText === 'in_progress' || statusText === 'running') {
+            if (phaseText.includes('gdd') || phaseText.includes('design') || phaseText.includes('plan')) {
+                currentStage = 'plan';
+                message = 'Your designers are making the game plan';
+            } else if (phaseText.includes('asset') || phaseText.includes('art') || phaseText.includes('audio') || phaseText.includes('scene') || phaseText.includes('script')) {
+                currentStage = 'build';
+                message = 'Your team is building the game';
+            } else {
+                currentStage = 'build';
+                message = 'Your AI team is working';
+            }
+        } else if (statusText === 'completed' || statusText === 'complete' || statusText === 'success') {
+            currentStage = 'play';
+            message = 'Your demo is ready to play and improve';
+        } else if (statusText === 'failed' || statusText === 'error') {
+            currentStage = 'build';
+            message = 'The team needs your help fixing a build problem';
+        }
+
+        const stages = ['idea', 'plan', 'build', 'play'];
+        const currentIndex = stages.indexOf(currentStage);
+        document.querySelectorAll('.director-stage').forEach(stage => {
+            const stageIndex = stages.indexOf(stage.dataset.stage || 'idea');
+            stage.classList.toggle('active', stageIndex === currentIndex);
+            stage.classList.toggle('complete', stageIndex < currentIndex);
+        });
+        const progressText = document.getElementById('directorProgressText');
+        if (progressText) progressText.textContent = message;
     }
 
     onNodeSelected(node) {

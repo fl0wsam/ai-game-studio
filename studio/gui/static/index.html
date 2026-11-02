@@ -96,7 +96,7 @@
         Offline Mock
       </label>
 
-      <button id="btnLaunch" class="btn btn-primary">▶ Build Game (Launch Agents)</button>
+      <button id="btnLaunch" class="btn btn-primary">▶ Build My Game</button>
     </div>
 
     <!-- Iterative Refinement & Modification Bar (Post-Build Prompting) -->
@@ -113,11 +113,59 @@
   <!-- Quick Template Presets -->
   <div class="preset-chips">
     <span>STARTER TEMPLATES:</span>
-    <span class="chip" data-preset="Endless neon cyber runner with high-speed obstacles and synthwave audio" data-engine="web_html5" data-genre="platformer_2d">[Neon Runner 2D]</span>
-    <span class="chip" data-preset="Top-down dungeon crawler with sword combat, goblin enemies, and quest objectives" data-engine="web_html5" data-genre="top_down_rpg">[Dungeon RPG]</span>
-    <span class="chip" data-preset="2D retro space shooter with asteroids, plasma lasers, and boss battles" data-engine="web_html5" data-genre="space_shooter">[Space Defender]</span>
-    <span class="chip" data-preset="Match-3 cosmic crystal grid puzzle with combo chain mechanics" data-engine="web_html5" data-genre="grid_puzzle">[Crystal Grid]</span>
+    <button class="chip" data-preset="Endless neon cyber runner with high-speed obstacles and synthwave audio" data-engine="web_html5" data-genre="platformer_2d" data-project-name="Neon Runner">Neon Runner</button>
+    <button class="chip" data-preset="Top-down dungeon crawler with sword combat, goblin enemies, and quest objectives" data-engine="web_html5" data-genre="top_down_rpg" data-project-name="Dungeon Quest">Dungeon Quest</button>
+    <button class="chip" data-preset="2D retro space shooter with asteroids, plasma lasers, and boss battles" data-engine="web_html5" data-genre="space_shooter" data-project-name="Space Defender">Space Defender</button>
+    <button class="chip" data-preset="Match-3 cosmic crystal grid puzzle with combo chain mechanics" data-engine="web_html5" data-genre="grid_puzzle" data-project-name="Crystal Grid">Crystal Grid</button>
   </div>
+
+  <!-- Kid-friendly Director Control Room -->
+  <section class="director-deck" aria-labelledby="directorDeckTitle">
+    <div class="director-welcome">
+      <div class="director-kicker">YOU ARE THE DIRECTOR</div>
+      <h1 id="directorDeckTitle">Lead your game from idea to playable demo</h1>
+      <p>Tell the studio what to make. Your AI team will plan, build, draw, and test it while you make the big decisions.</p>
+      <label class="director-project">
+        <span>Project name</span>
+        <input id="inputProjectName" type="text" value="My First Game" maxlength="60" aria-label="Project name">
+      </label>
+      <p class="director-generated-title">The AI may give the game its own in-game title after building.</p>
+    </div>
+
+    <div class="director-progress" aria-live="polite">
+      <div class="director-progress-heading">
+        <span>STUDIO PLAN</span>
+        <strong id="directorProgressText">Ready for your first idea</strong>
+      </div>
+      <ol class="director-stages" aria-label="Game production stages">
+        <li class="director-stage active" data-stage="idea">
+          <span class="stage-number">1</span>
+          <span><b>Imagine</b><small>Choose the idea</small></span>
+        </li>
+        <li class="director-stage" data-stage="plan">
+          <span class="stage-number">2</span>
+          <span><b>Plan</b><small>Write the game plan</small></span>
+        </li>
+        <li class="director-stage" data-stage="build">
+          <span class="stage-number">3</span>
+          <span><b>Build</b><small>Create the game</small></span>
+        </li>
+        <li class="director-stage" data-stage="play">
+          <span class="stage-number">4</span>
+          <span><b>Play</b><small>Test and improve</small></span>
+        </li>
+      </ol>
+    </div>
+
+    <div class="director-team" aria-label="AI studio team">
+      <div class="director-team-heading">YOUR AI TEAM</div>
+      <div class="director-team-grid">
+        <div class="director-team-card openai-team"><span class="team-avatar">O</span><span><b>OpenAI</b><small>Game designer</small></span></div>
+        <div class="director-team-card claude-team"><span class="team-avatar">C</span><span><b>Claude</b><small>Game programmer</small></span></div>
+        <div class="director-team-card gemini-team"><span class="team-avatar">G</span><span><b>Gemini</b><small>Artist and sound maker</small></span></div>
+      </div>
+    </div>
+  </section>
 
   <!-- Main IDE Multi-Pane Dock Layout (Godot/Unity Workspace) -->
   <main class="ide-workspace">
@@ -136,7 +184,7 @@
         <div class="tree-section-title">Directory Hierarchy</div>
         <div id="treeProjectRoot" class="tree-node active">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-6l-2-2H5a2 2 0 0 0-2 2z"></path></svg>
-          <span id="treeRootLabel">res:// (Root Project)</span>
+          <span id="treeRootLabel">res:// [My First Game] (godot4)</span>
         </div>
         <div id="dynamicFileNodes">
           <div class="tree-node" style="padding-left: 18px;">
@@ -295,7 +343,7 @@
         </div>
         <div id="tabGdd" class="tab-content">
           <div id="tabGddBody" class="inspector-body">
-            <p style="color: var(--text-muted);">No GDD generated yet. Enter game prompt and click 'Build Game'.</p>
+            <p style="color: var(--text-muted);">No GDD generated yet. Enter a game idea and click 'Build My Game'.</p>
           </div>
         </div>
         <div id="tabScenes" class="tab-content">
